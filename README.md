@@ -1,153 +1,180 @@
-# Qwen 博客
+<a name="readme-top"></a>
 
-博客基于[Hugo](https://gohugo.io)编译框架，Hugo可在各平台上方便的安装。
+<p align="center">
+    <img src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/qwen3_coder.png" width="400"/>
+<p>
 
-博客主题基于[PaperMod](https://github.com/adityatelange/hugo-PaperMod)，同时借鉴了[VibrantShadows](https://github.com/adityatelange/hugo-PaperMod)，以及[OpenAI](https://openai.com)的设计。
+<p align="center">
+    <img src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/qwen3-coder-main.jpg" width="800"/>
+<p>
 
-## Hugo安装
+<p align="center">
+        💜 <a href="https://chat.qwenlm.ai/"><b>Qwen Chat</b></a>&nbsp&nbsp | &nbsp&nbsp🤗 <a href="https://huggingface.co/collections/Qwen/qwen3-coder-687fc861e53c939e52d52d10">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/organization/qwen">ModelScope</a>&nbsp&nbsp | &nbsp&nbsp 📑 <a href="https://qwenlm.github.io/blog/qwen3-coder">Blog</a> &nbsp&nbsp ｜ &nbsp&nbsp📖 <a href="https://qwen.readthedocs.io/">Documentation</a>
+<br> 
+</a>&nbsp&nbsp | &nbsp&nbsp 🌍 <a href="https://huggingface.co/spaces/Qwen/Qwen3-Coder-WebDev">WebDev</a>&nbsp&nbsp | &nbsp&nbsp💬 <a href="https://github.com/QwenLM/Qwen/blob/main/assets/wechat.png">WeChat (微信)</a>&nbsp&nbsp | &nbsp&nbsp🫨 <a href="https://discord.gg/CV4E9rpNSD"> Discord</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="https://arxiv.org/abs/2505.09388">Arxiv</a>&nbsp&nbsp | &nbsp&nbsp 👽 <a href="https://github.com/QwenLM/qwen-code">Qwen Code</a>
+</p>
 
-推荐使用mac
-```bash
-brew install hugo #会直接安装最新版本的hugo，安装完编译blog会出错，版本不对齐，执行这个命令会安装go，然后再使用下面命令安装旧版本hugo：
-GO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@release-0.124.0
-brew uninstall hugo #删掉高版本hugo,拷贝低版本的hugo到bin
-cp /Users/$currentusr/go/bin/hugo /usr/local/bin/
+Visit our Hugging Face or ModelScope organization (click links above), search checkpoints with names starting with `Qwen3-Coder-`, and you will find all you need! Enjoy!
+
+# Qwen3-Coder: Agentic Coding in the World.
+
+## Introduction
+
+Today, we're announcing Qwen3-Coder, our most agentic code model to date. **Qwen3-Coder** is available in multiple sizes, but we're excited to introduce its most powerful variant first: **Qwen3-Coder-480B-A35B-Instruct** — a 480B-parameter Mixture-of-Experts model with 35B active parameters, offering exceptional performance in both coding and agentic tasks. **Qwen3-Coder-480B-A35B-Instruct** sets new state-of-the-art results among open models on Agentic Coding, Agentic Browser-Use, and Agentic Tool-Use, comparable to Claude Sonnet. 
+
+💻 **Significant Performance**: among open models on **Agentic Coding**, **Agentic Browser-Use**, and other foundational coding tasks, achieving results comparable to Claude Sonnet;
+
+📚 **Long-context Capabilities**: with native support for **256K** tokens, extendable up to **1M** tokens using Yarn, optimized for repository-scale understanding;
+
+🛠 **Agentic Coding**: supporting for most platfrom such as **Qwen Code**, **CLINE**, featuring a specially designed function call format;
+
+## Basic information
+
+1. ✨ Supporting long context understanding and generation with the context length of 256K tokens;
+2. ✨ Supporting 358 coding languages;
+```
+['ABAP', 'ActionScript', 'Ada', 'Agda', 'Alloy', 'ApacheConf', 'AppleScript', 'Arc', 'Arduino', 'AsciiDoc', 'AspectJ', 'Assembly', 'Augeas', 'AutoHotkey', 'AutoIt', 'Awk', 'Batchfile', 'Befunge', 'Bison', 'BitBake', 'BlitzBasic', 'BlitzMax', 'Bluespec', 'Boo', 'Brainfuck', 'Brightscript', 'Bro', 'C', 'C#', 'C++', 'C2hs Haskell', 'CLIPS', 'CMake', 'COBOL', 'CSS', 'CSV', "Cap'n Proto", 'CartoCSS', 'Ceylon', 'Chapel', 'ChucK', 'Cirru', 'Clarion', 'Clean', 'Click', 'Clojure', 'CoffeeScript', 'ColdFusion', 'ColdFusion CFC', 'Common Lisp', 'Component Pascal', 'Coq', 'Creole', 'Crystal', 'Csound', 'Cucumber', 'Cuda', 'Cycript', 'Cython', 'D', 'DIGITAL Command Language', 'DM', 'DNS Zone', 'Darcs Patch', 'Dart', 'Diff', 'Dockerfile', 'Dogescript', 'Dylan', 'E', 'ECL', 'Eagle', 'Ecere Projects', 'Eiffel', 'Elixir', 'Elm', 'Emacs Lisp', 'EmberScript', 'Erlang', 'F#', 'FLUX', 'FORTRAN', 'Factor', 'Fancy', 'Fantom', 'Forth', 'FreeMarker', 'G-code', 'GAMS', 'GAP', 'GAS', 'GDScript', 'GLSL', 'Genshi', 'Gentoo Ebuild', 'Gentoo Eclass', 'Gettext Catalog', 'Glyph', 'Gnuplot', 'Go', 'Golo', 'Gosu', 'Grace', 'Gradle', 'Grammatical Framework', 'GraphQL', 'Graphviz (DOT)', 'Groff', 'Groovy', 'Groovy Server Pages', 'HCL', 'HLSL', 'HTML', 'HTML+Django', 'HTML+EEX', 'HTML+ERB', 'HTML+PHP', 'HTTP', 'Haml', 'Handlebars', 'Harbour', 'Haskell', 'Haxe', 'Hy', 'IDL', 'IGOR Pro', 'INI', 'IRC log', 'Idris', 'Inform 7', 'Inno Setup', 'Io', 'Ioke', 'Isabelle', 'J', 'JFlex', 'JSON', 'JSON5', 'JSONLD', 'JSONiq', 'JSX', 'Jade', 'Jasmin', 'Java', 'Java Server Pages', 'JavaScript', 'Julia', 'Jupyter Notebook', 'KRL', 'KiCad', 'Kit', 'Kotlin', 'LFE', 'LLVM', 'LOLCODE', 'LSL', 'LabVIEW', 'Lasso', 'Latte', 'Lean', 'Less', 'Lex', 'LilyPond', 'Linker Script', 'Liquid', 'Literate Agda', 'Literate CoffeeScript', 'Literate Haskell', 'LiveScript', 'Logos', 'Logtalk', 'LookML', 'Lua', 'M', 'M4', 'MAXScript', 'MTML', 'MUF', 'Makefile', 'Mako', 'Maple', 'Markdown', 'Mask', 'Mathematica', 'Matlab', 'Max', 'MediaWiki', 'Metal', 'MiniD', 'Mirah', 'Modelica', 'Module Management System', 'Monkey', 'MoonScript', 'Myghty', 'NSIS', 'NetLinx', 'NetLogo', 'Nginx', 'Nimrod', 'Ninja', 'Nit', 'Nix', 'Nu', 'NumPy', 'OCaml', 'ObjDump', 'Objective-C++', 'Objective-J', 'Octave', 'Omgrofl', 'Opa', 'Opal', 'OpenCL', 'OpenEdge ABL', 'OpenSCAD', 'Org', 'Ox', 'Oxygene', 'Oz', 'PAWN', 'PHP', 'POV-Ray SDL', 'Pan', 'Papyrus', 'Parrot', 'Parrot Assembly', 'Parrot Internal Representation', 'Pascal', 'Perl', 'Perl6', 'Pickle', 'PigLatin', 'Pike', 'Pod', 'PogoScript', 'Pony', 'PostScript', 'PowerShell', 'Processing', 'Prolog', 'Propeller Spin', 'Protocol Buffer', 'Public Key', 'Pure Data', 'PureBasic', 'PureScript', 'Python', 'Python traceback', 'QML', 'QMake', 'R', 'RAML', 'RDoc', 'REALbasic', 'RHTML', 'RMarkdown', 'Racket', 'Ragel in Ruby Host', 'Raw token data', 'Rebol', 'Red', 'Redcode', "Ren'Py", 'RenderScript', 'RobotFramework', 'Rouge', 'Ruby', 'Rust', 'SAS', 'SCSS', 'SMT', 'SPARQL', 'SQF', 'SQL', 'STON', 'SVG', 'Sage', 'SaltStack', 'Sass', 'Scala', 'Scaml', 'Scheme', 'Scilab', 'Self', 'Shell', 'ShellSession', 'Shen', 'Slash', 'Slim', 'Smali', 'Smalltalk', 'Smarty', 'Solidity', 'SourcePawn', 'Squirrel', 'Stan', 'Standard ML', 'Stata', 'Stylus', 'SuperCollider', 'Swift', 'SystemVerilog', 'TOML', 'TXL', 'Tcl', 'Tcsh', 'TeX', 'Tea', 'Text', 'Textile', 'Thrift', 'Turing', 'Turtle', 'Twig', 'TypeScript', 'Unified Parallel C', 'Unity3D Asset', 'Uno', 'UnrealScript', 'UrWeb', 'VCL', 'VHDL', 'Vala', 'Verilog', 'VimL', 'Visual Basic', 'Volt', 'Vue', 'Web Ontology Language', 'WebAssembly', 'WebIDL', 'X10', 'XC', 'XML', 'XPages', 'XProc', 'XQuery', 'XS', 'XSLT', 'Xojo', 'Xtend', 'YAML', 'YANG', 'Yacc', 'Zephir', 'Zig', 'Zimpl', 'desktop', 'eC', 'edn', 'fish', 'mupad', 'nesC', 'ooc', 'reStructuredText', 'wisp', 'xBase']
+```
+3. ✨ Retain strengths in math and general capabilities from base model.
+
+> [!Important]
+> 
+> Qwen3-coder function calling relies on our new tool parser `qwen3coder_tool_parser.py` <a href="https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct/blob/main/qwen3coder_tool_parser.py">here</a>.
+>
+> We updated both the special tokens and their corresponding token ids, in order to maintain consistency with Qwen3. Please make sure to use the new tokenizer.
+
+
+| model name                  | type     | length | Download                                                                                                                                                                        |
+|-----------------------------|----------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Qwen3-Coder-480B-A35B-Instruct         | instruct     | 256k    | 🤗 [Hugging Face](https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct  ) • 🤖 [ModelScope](https://modelscope.cn/models/Qwen/Qwen3-Coder-480B-A35B-Instruct)                                       |
+| Qwen3-Coder-480B-A35B-Instruct-FP8         | instruct     | 256k    | 🤗 [Hugging Face](https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8) • 🤖 [ModelScope](https://modelscope.cn/models/Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8)                                       |
+
+Detailed performance and introduction are shown in this <a href="https://qwenlm.github.io/blog/qwen3-coder"> 📑 blog</a>.
+
+## Quick Start
+
+> [!Important]
+> **Qwen3-Coder-480B-A35B-Instruct** are instruction models for chatting;
+>
+> This model supports only non-thinking mode and does not generate ``<think></think>`` blocks in its output. Meanwhile, specifying `enable_thinking=False` is no longer required.**
+>
+### 👉🏻 Chat with Qwen3-Coder-480B-A35B-Instruct
+You can just write several lines of code with `transformers` to chat with Qwen3-Coder-480B-A35B-Instruct. Essentially, we build the tokenizer and the model with `from_pretrained` method, and we use generate method to perform chatting with the help of chat template provided by the tokenizer. Below is an example of how to chat with **Qwen3-Coder-480B-A35B-Instruct**:
+
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model_name = "Qwen/Qwen3-Coder-480B-A35B-Instruct"
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype="auto",
+    device_map="auto"
+)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+prompt = "write a quick sort algorithm."
+messages = [
+    {"role": "user", "content": prompt}
+]
+text = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True
+)
+model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
+
+generated_ids = model.generate(
+    **model_inputs,
+    max_new_tokens=65536
+)
+generated_ids = [
+    output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
+]
+
+response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+```
+The `apply_chat_template()` function is used to convert the messages into a format that the model can understand.
+The `add_generation_prompt` argument is used to add a generation prompt, which refers to `<|im_start|>assistant\n` to the input. Notably, we apply ChatML template for chat models following our previous practice.
+The `max_new_tokens` argument is used to set the maximum length of the response. The `tokenizer.batch_decode()` function is used to decode the response. In terms of the input, the above messages is an example to show how to format your dialog history and system prompt.
+You can use the other size of instruct model in the same way.
+
+
+#### Fill in the middle with Qwen3-Coder-480B-A35B-Instruct
+
+The code insertion task, also referred to as the "fill-in-the-middle" challenge, requires the insertion of code segments in a manner that bridges the gaps within a given code context. For an approach aligned with best practices, we recommend adhering to the formatting guidelines outlined in the paper "Efficient Training of Language Models to Fill in the Middle"[[arxiv](https://arxiv.org/abs/2207.14255)]. 
+
+The prompt should be structured as follows:
+```python
+prompt = '<|fim_prefix|>' + prefix_code + '<|fim_suffix|>' + suffix_code + '<|fim_middle|>'
+```
+Following the approach mentioned, an example would be structured in this manner:
+
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM
+# load model
+device = "cuda" # the device to load the model onto
+
+TOKENIZER = AutoTokenizer.from_pretrained("Qwen/Qwen3-Coder-480B-A35B-Instruct")
+MODEL = AutoModelForCausalLM.from_pretrained("Qwen/Qwen3-Coder-480B-A35B-Instruct", device_map="auto").eval()
+
+
+input_text = """<|fim_prefix|>def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    <|fim_suffix|>
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)<|fim_middle|>"""
+            
+messages = [
+    {"role": "system", "content": "You are a code completion assistant."},
+    {"role": "user", "content": input_text}
+]
+
+
+text = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True
+)
+model_inputs = TOKENIZER([text], return_tensors="pt").to(model.device)
+
+# Use `max_new_tokens` to control the maximum output length.
+generated_ids = MODEL.generate(model_inputs.input_ids, max_new_tokens=512, do_sample=False)[0]
+# The generated_ids include prompt_ids, we only need to decode the tokens after prompt_ids.
+output_text = TOKENIZER.decode(generated_ids[len(model_inputs.input_ids[0]):], skip_special_tokens=True)
+
+print(f"Prompt: {input_text}\n\nGenerated text: {output_text}")
 ```
 
-Windows直接下载v0.124.1，复制`hugo.exe`到本项目根目录即可，不需要安装go
-- https://github.com/gohugoio/hugo/releases/download/v0.124.1/hugo_extended_0.124.1_windows-amd64.zip
+## Citation
+If you find our work helpful, feel free to give us a cite.
 
-## 编译
-
-编译网站，默认输出到`public`文件夹中。
-```bash
-hugo 
+```bibtex
+@misc{qwen3technicalreport,
+      title={Qwen3 Technical Report}, 
+      author={Qwen Team},
+      year={2025},
+      eprint={2505.09388},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.09388},
+}
+@article{hui2024qwen2,
+  title={Qwen2. 5-Coder Technical Report},
+  author={Hui, Binyuan and Yang, Jian and Cui, Zeyu and Yang, Jiaxi and Liu, Dayiheng and Zhang, Lei and Liu, Tianyu and Zhang, Jiajun and Yu, Bowen and Dang, Kai and others},
+  journal={arXiv preprint arXiv:2409.12186},
+  year={2024}
+}
 ```
 
-Hugo也内置了本地服务器，用于调试功能。
-```bash
-hugo server -D
-```
-其中`-D`声明也需要编译标记为draft的页面。
+## Contact Us
+If you are interested to leave a message to either our research team or product team, join our [Discord](https://discord.gg/z3GAxXZ9Ce) or [WeChat groups](https://github.com/QwenLM/Qwen/blob/main/assets/wechat.png)!
 
-
-## 新建博客
-
-```bash
-hugo new blog/<path>
-```
-将在`content/blog/<path>`根据archetypes中的骨架新建文档，注意需要路径需要以`.md`结尾。
-
-可以按照文件夹管理，即`path`为`<name>/index.md`，也可以直接在目录下建立文档`<name>.md`。
-对于中文页面，只需要添加额外的后缀`.zh`即可，即文档后缀为`.zh.md`。
-
-本博客中普通页面的frontmatter包含大量自定义配置，其中`header`组为页面头部配置，`cover`组为页面封面配置。配置名是自解释的。
-
-注意：
-- 如果内容开头为button或分级标题，请手动设置`summary`
-- 如需支持latex math，请设置`math: true`，文中`$`、`$$`、`\(`、`\[`标志的内容将使用katex自动解析
-- 如需支持样例库，请设置`gallery: true`，并配合example shortcode实现
-
-### shortcode
-
-hugo提供了shortcode功能，shortcode是代码片段的模板，可以快速完成内容排版。
-
-内置的figure shortcode用于图片排版
-```
-{{< figure src="" title="" class="" width="" height="" >}}
-```
-本模板的CSS中对于以`#center`结尾的`img`，自动居中。因而以下代码可以快速居中图片
-```
-{{< figure src="test.jpg#center" >}}
-```
-搭配本模板中的`wide` class可实现宽版图片，搭配本模板中的`gallery` class可实现阴影效果。
-
-内置的highlight shortcode用于代码高亮（注意fenced code blocks，即`\`\`\``围绕的代码段也是可用的）
-```
-{{< highlight python3 >}}
-print("hello world!")
-{{< /highlight >}}
-```
-
-更多内置shortcode，如youtube, tweet, vimeo, instagram等，请见[官方说明](https://gohugo.io/content-management/shortcodes/)。
-
-
-本模板也附带了一些shortcode如
-
-rawhtml
-```
-{{< rawhtml >}}
-<div>I'm just bored.</div>
-{{< /rawhtml >}}
-```
-
-video
-```
-{{< video src="video.mp4" loop=true controls=false autoplay=true title="Cool video for you!" >}}
-```
-
-本项目额外实现的shortcode
-
-button用于风格化的按钮
-```
-{{< button href="https://github.com/QwenLM/Qwen2" label="GITHUB" external=true >}}
-```
-
-example用于样例展示
-```
-{{< example data="1.json" hide=false next=false >}}
-```
-- data为样例内容同级目录下放置样例的JSON格式文件，格式如下
-    ```json
-    {
-        "title": "Example",
-        "messages": [
-            {
-                "role": "User",
-                "content": "Hi!"
-            },
-            {
-                "role": "Qwen",
-                "content": "Hi!"
-            }
-        ]
-    }
-    ```
-    content为hugo支持的markdown语法，可包含shortcode。如需要支持latex渲染，请避免使用`\(...\)`或`\[\]`，因为它们在常用的markdown实现中是对应字符的转义。请使用`$...$`或`$$...$$$`，或者对`\`也进行转义即`\\(...\\)`或`\\[...\\]`。
-- hide表示该条目是否初始时隐藏
-- next表示是否显示next按钮
-
-其中hide, next用于配合实现样例库效果（需额外设置front matter中gallery为true）
-```
-{{< fullwidth class="example-container" >}}
-{{< example data="1.json" hide=false next=true >}}
-{{< example data="2.json" hide=true next=true >}}
-{{< example data="3.json" hide=true next=true >}}
-{{< example data="4.json" hide=true next=true >}}
-{{< /fullwidth >}}
-```
-- 右击回到顶部按钮，可展开所有样例。
-
-更多请见`themes\PaperMod\layouts\shortcodes`和`layouts\shortcodes`。
-
-### footnote
-
-reference等请使用markdown语法中的footnote编写。
-```
-This is a footnote[^short].
-
-
-[^short]: somewhere in content
-```
-其中`short`可以为任意id，编译后会自动按文中出现顺序编号，文中会包含到文后footnote的链接，footnote后会有到文中引用处的回链。
-
-## 网站配置
-
-见文件[`config.yml`](config.yml)。
-
-发布时注意修改`baseURL`项。
-
-## 自动部署
-
-通过github action可以自动将原代码编译并部署到github pages中。本存储库中已有相关配置，请注意其默认从`main`分支中读取，发布至`gh-pages`分支中。
-
+<p align="right" style="font-size: 14px; color: #555; margin-top: 20px;">
+    <a href="#readme-top" style="text-decoration: none; color: #007bff; font-weight: bold;">
+        ↑ Back to Top ↑
+    </a>
+</p>
