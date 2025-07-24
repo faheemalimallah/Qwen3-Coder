@@ -327,7 +327,7 @@ Animations should be very smooth.
 
 
 ## Star History
-[![Star History Chart](https://api.star-history.com/svg?repos=QwenLM/Qwen3-Coder&type=Date)](https://star-history.com/#QwenLM/Qwen2.5-Coder&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=QwenLM/Qwen3-Coder&type=Date)](https://star-history.com/#QwenLM/Qwen3-Coder&Date)
 
 
 
