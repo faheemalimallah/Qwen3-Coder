@@ -200,9 +200,10 @@ print(f"Prompt: {input_text}\n\nGenerated text: {output_text}")
 </details>
 
 <p align="center">
-    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo1.mp4" width="400"/>
-<p>
-
+    <a href="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo1.mp4">
+    <img src="assets/usage_demo_example1.png" width="400" />
+    </a>
+<p >
 
 ### Example: Multicolor and Interactive Animation
 
@@ -217,10 +218,11 @@ https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.min.js
 ```
 </details>
 
-
 <p align="center">
-    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo2.mp4" width="400"/>
-<p>
+    <a href="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo2.mp4">
+    <img src="assets/usage_demo_example2.png" width="400" />
+    </a>
+<p >
 
 ### Example: 3D Google Earth
 
@@ -233,11 +235,11 @@ To create a 3D Google Earth, you need to load the terrain map correctly. You can
 
 </details>
 
-
 <p align="center">
-    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo3.mp4" width="400"/>
-<p>
-
+    <a href="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo3.mp4">
+    <img src="assets/usage_demo_example3.png" width="400" />
+    </a>
+<p >
 
 ### Example: Testing Your WPM with a Famous Quote 
 
@@ -252,8 +254,10 @@ The game should be able to support typing, and you need to neglect upcase and lo
 </details>
 
 <p align="center">
-    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo4.mp4" width="400"/>
-<p>
+    <a href="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo4.mp4">
+    <img src="assets/usage_demo_example4.png" width="400" />
+    </a>
+<p >
 
 ### Example: Bouncing Ball in Rotation Hypercube
 
@@ -267,8 +271,10 @@ Make a page in HTML that shows an animation of a ball bouncing in a rotating hyp
 </details>
 
 <p align="center">
-    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo5.mp4" width="400"/>
-<p>
+    <a href="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo5.mp4">
+    <img src="assets/usage_demo_example5.png" width="400" />
+    </a>
+<p >
 
 ### Example: Solar System Simulation
 
@@ -283,8 +289,10 @@ write a web page to show the solar system simulation
 
 
 <p align="center">
-    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo6.mp4" width="400"/>
-<p>
+    <a href="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo6.mp4">
+    <img src="assets/usage_demo_example6.png" width="400" />
+    </a>
+<p >
 
 ### Example: DUET Game
 
@@ -311,10 +319,11 @@ Animations should be very smooth.
 </details>
 
 
-
 <p align="center">
-    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo7.mp4" width="400"/>
-<p>
+    <a href="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo7.mp4">
+    <img src="assets/usage_demo_example7.png" width="400" />
+    </a>
+<p >
 
 
 ## Star History
