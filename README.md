@@ -149,6 +149,179 @@ output_text = TOKENIZER.decode(generated_ids[len(model_inputs.input_ids[0]):], s
 print(f"Prompt: {input_text}\n\nGenerated text: {output_text}")
 ```
 
+## Use Cases
+### Example: Physics-Based Chimney Demolition Simulation with Controlled Explosion
+
+<details>
+<summary>Prompt with Qwen Chat Web Dev </summary>
+
+```
+使用 three.js, cannon-es.js 生成一个震撼的3D建筑拆除演示。
+
+## 场景设置：
+- 地面是一个深灰色混凝土平面，尺寸80*80，
+- 所有物体严格遵循现实物理规则，包括重力、摩擦力、碰撞检测和动量守恒
+
+## 建筑结构：
+- 一座圆形高层建筑，周长对应20个方块
+- 建筑总高度60个方块
+- 每层采用砖砌结构，方块与砖结构建筑一致, 错开50%排列，增强结构稳定性
+- 建筑外墙使用米色方块
+- **重要：方块初始排列时必须确保紧密贴合，无间隙，可以通过轻微重叠或调整半径来实现**
+- **重要：建筑初始化完成后，所有方块应该处于物理"睡眠"状态，确保建筑在爆炸前保持完美的静止状态，不会因重力而下沉或松散**
+- 建筑砖块之间使用粘性材料填充（不可见），通过高摩擦力（0.8+）和低弹性（0.05以下）来模拟粘合效果
+- 砖块在建筑倒塌瞬间不会散掉，而是建筑作为一个整体倒在地面的时候才因受力过大而散掉
+
+## 定向爆破系统：
+- 在建筑的第1层的最右侧方块附近安装爆炸装置（不可见）
+- 提供操作按钮点击爆炸
+- **爆炸时唤醒所有相关方块的物理状态**
+- 爆炸点产生半径2的强力冲击波，冲击波影响到的方块, 受到2-5单位的冲击力
+
+## 建筑稳定性要求：
+- **确保建筑在未爆炸时完全静止，无任何晃动或下沉**
+- **物理世界初始化后给建筑几个物理步骤来自然稳定，或使用睡眠机制**
+- **方块间的接触材料应具有高摩擦力和极低弹性，模拟砖块间的砂浆粘合**
+
+## 震撼的倒塌效果：
+- 方块在爆炸冲击下不仅飞散，还会在空中翻滚和碰撞
+- 烟尘会随着建筑倒塌逐渐扩散，营造真实的拆除现场氛围
+
+## 增强的视觉效果：
+- 添加环境光照变化：爆炸瞬间亮度激增，然后被烟尘遮挡变暗
+- 粒子系统包括：烟雾、灰尘
+
+## 技术要求：
+- 粒子系统用于烟雾和灰尘效果
+- 所有代码集成在单个HTML文件中，包含必要的CSS样式
+- 添加简单的UI控制：重置按钮、相机角度切换, 爆炸按钮, 鼠标左键控制摄像机角度，右键控制摄像机位置，滚轮控制摄像机焦距
+```
+
+</details>
+
+<p align="center">
+    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo1.mp4" width="400"/>
+<p>
+
+
+### Example: Multicolor and Interactive Animation
+
+<details>
+<summary>Prompt with Cline [act mode] </summary>
+
+```
+Create an amazing animation multicolor and interactive using p5js
+
+use this cdn:
+https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.min.js
+```
+</details>
+
+
+<p align="center">
+    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo2.mp4" width="400"/>
+<p>
+
+### Example: 3D Google Earth
+
+<details>
+<summary>Prompt with Qwen Chat Web Dev </summary>
+
+```
+To create a 3D Google Earth, you need to load the terrain map correctly. You can use any online resource. The code is written into an HTML file.
+```
+
+</details>
+
+
+<p align="center">
+    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo3.mp4" width="400"/>
+<p>
+
+
+### Example: Testing Your WPM with a Famous Quote 
+
+
+<details>
+<summary> Prompt with Qwen-Code CLI </summary>
+
+```
+Create an interesting typing game with a keyboard in the lower middle of the screen and some famous articles in the upper middle. When the user types a word correctly, a cool reaction should be given to encourage him. Design a modern soft color scheme inspired by macarons. Come up with a very creative solution first, and then start writing code.
+The game should be able to support typing, and you need to neglect upcase and lowercase.
+```
+</details>
+
+<p align="center">
+    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo4.mp4" width="400"/>
+<p>
+
+### Example: Bouncing Ball in Rotation Hypercube
+
+
+<details>
+<summary> Prompt with Qwen Chat Web Dev </summary>
+
+```
+Make a page in HTML that shows an animation of a ball bouncing in a rotating hypercube
+```
+</details>
+
+<p align="center">
+    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo5.mp4" width="400"/>
+<p>
+
+### Example: Solar System Simulation
+
+
+<details>
+<summary> Prompt with Cline [act mode] </summary>
+
+```
+write a web page to show the solar system simulation
+```
+</details>
+
+
+<p align="center">
+    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo6.mp4" width="400"/>
+<p>
+
+### Example: DUET Game
+
+
+<details>
+<summary> Prompt with Cline [act mode] </summary>
+
+```
+Create a complete, single-file HTML game with CSS and JavaScript. The game is inspired by "Duet".
+
+Gameplay:
+
+There are two balls, one red and one blue, rotating around a central point.
+The player uses the 'A' and 'D' keys to rotate them counter-clockwise and clockwise.
+White rectangular obstacles move down from the top of the screen.
+The player must rotate the balls to avoid hitting the obstacles.
+If a ball hits an obstacle, the game is over.
+Visuals:
+
+Make the visual effects amazing.
+Use a dark background with neon glowing effects for the balls and obstacles.
+Animations should be very smooth.
+```
+</details>
+
+
+
+<p align="center">
+    <video src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-Coder/demo7.mp4" width="400"/>
+<p>
+
+
+## Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=QwenLM/Qwen3-Coder&type=Date)](https://star-history.com/#QwenLM/Qwen2.5-Coder&Date)
+
+
+
 ## Citation
 If you find our work helpful, feel free to give us a cite.
 
